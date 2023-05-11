@@ -1,6 +1,18 @@
 (defpackage #:cl-ghost/admin
   (:use #:cl-ghost #:cl)
-  (:nicknames #:admin))
+  (:nicknames #:admin)
+  (:export #:expired-jwt
+           #:jwt
+           #:ghost-admin
+           #:endpoint
+           #:ghost
+           #:ghost-admin
+           #:admin-api-key
+           #:admin-url
+           #:creation-time
+           #:token
+           #:expire-time
+           #:login))
 
 (in-package #:admin)
 
@@ -72,7 +84,6 @@
 
 (defclass admin-api (endpoint)
   ())
-
 
 (defmethod pick-base ((endpoint admin-api))
   (admin-url *ghost*))

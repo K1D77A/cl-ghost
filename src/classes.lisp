@@ -1,5 +1,21 @@
 (in-package #:cl-ghost)
 
+
+(defclass ghost ()
+  ((api-url
+    :accessor api-url
+    :initarg :api-url
+    :type string)
+   (content-api-key
+    :accessor content-api-key
+    :initarg :content-api-key
+    :type string)))
+
+(defmethod print-object ((o ghost) stream)
+  (print-unreadable-object (o stream) :type t
+    (format stream "URL: ~S" (api-url o))))
+
+
 (defclass has-id ()
   ((id
     :accessor id
