@@ -138,7 +138,7 @@
 (defmacro defendpoint (name supers url &body body)
   `(progn (defclass ,name ,supers
             ((url
-              :initform ,(format nil "/admin~A" url))))
+              :initform ,(format nil "/~A" url))))
           (export (list ',name))))
 
 

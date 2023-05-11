@@ -9,7 +9,7 @@
   ())
 
 (defmethod pick-base ((endpoint content-api))
-  (admin-url *ghost*))
+  (api-url *ghost*))
 
 (defclass browse-api (content-api)
   ())
