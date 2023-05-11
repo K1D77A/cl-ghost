@@ -9,7 +9,8 @@
                #:jose
                #:ironclad
                #:str
-               #:local-time)
+               #:local-time
+               #:com.inuoe.jzon)
   :serial t
   :pathname "src"
   :components ((:file "package")
