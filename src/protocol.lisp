@@ -5,8 +5,8 @@
 (defun parse (json)
   (funcall *json-parser* json))
 
-(defgeneric login (ghost expire-amount expire-unit)
-  (:documentation "Generates JWT for instance of GHOST that lasts until local-time:now +
+(defgeneric login (expire-amount expire-unit)
+  (:documentation "Generates JWT for *ghost* that lasts until local-time:now +
 EXPIRE-AMOUNT of EXPIRE-UNIT.
 Expire unit one of: (:NSEC :SEC :MINUTE :HOUR :DAY :DAY-OF-WEEK :MONTH :YEAR)."))
 

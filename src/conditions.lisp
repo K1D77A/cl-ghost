@@ -78,4 +78,5 @@
           (parsed (parse body)))
       (make-condition new-con :endpoint endpoint
                               :errors parsed
+                              :http-status status
                               :dex-response condition))))

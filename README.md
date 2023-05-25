@@ -34,7 +34,7 @@ separately ([apparently](https://ghost.org/docs/admin-api/)).
 When using admin you need to login
 
 ```lisp
-(login *ghost* 30 :minutes)
+(login 30 :minutes)
 ```
 That will create a JWT that wont expire for 30 minutes.
 When you attempt to make requests using `#'call-api` You may have to handle a condition
