@@ -12,7 +12,8 @@
            #:build-headers
            #:build-body
            #:generate-query
-           #:call-api)
+           #:call-api
+           #:renew ;;jwt restart)
   ;;conditions
   (:export #:ghost-condition
            #:poorly-configured

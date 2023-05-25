@@ -63,6 +63,18 @@ of ghost. Attempts to correct wrap and parse conditions caught using #'construct
     (handler-case (call-next-method)
       (dexador.error:http-request-failed (c)
         (let ((con (construct-condition endpoint c)))
-          (error con))))))
+          (restart-case
+              (error con)
+            (renew ()
+              :report "Renew JWT?"
+              (declare (special *amount* *unit*))
+              (let ((amount (if (boundp '*amount*)
+                                *amount*
+                                30))
+                    (unit (if (boundp '*unit*)
+                              *unit*
+                              :minute)))
+                (login amount unit)
+                (call-api endpoint)))))))))
 
 
