@@ -13,7 +13,7 @@
            #:build-body
            #:generate-query
            #:call-api
-           #:renew ;;jwt restart)
+           #:renew);;jwt restart)
   ;;conditions
   (:export #:ghost-condition
            #:poorly-configured
